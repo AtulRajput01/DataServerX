@@ -18,4 +18,4 @@ Install Express:
 Run the server using Node.js:
 
 'node server.js'
-![Screenshot from 2024-01-26 23-57-08](https://github.com/AtulRajput01/DataServerX/assets/92659293/73751ec6-833f-4c43-9f08-c52a3d6df059)
+[Uploading WhatsApp Image .jpeg-41:-29:85:46…]()
