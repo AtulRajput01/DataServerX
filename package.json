@@ -1,10 +1,11 @@
 {
   "name": "http-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repository contains a simple Node.js HTTP server that responds to incoming GET requests on the `/data` endpoint. It accepts two query parameters: `n` (file name) and `m` (line number).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,3 @@
     "express": "^4.18.2"
   }
 }
-
-
