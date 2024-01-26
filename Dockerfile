@@ -1,6 +1,6 @@
-FROM node:latest
+FROM node:14
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
@@ -10,7 +10,4 @@ COPY . .
 
 EXPOSE 8080
 
-ENV NODE_ENV=production
-
-CMD ["node", "server.js"]
-
+CMD [ "node", "server.js" ]
