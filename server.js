@@ -7,7 +7,6 @@ const fs = require("fs");
 
 const PORT = 8080;
 
-// Set up Multer to store uploaded files in /tmp/data
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
@@ -36,7 +35,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
     if (!req.file) {
       throw new Error("File not uploaded 🚫");
     }
-    // Save the uploaded file to /tmp/data
+    
     const name = Math.floor(Math.random() * 100) + 1;
     const filePath = `./tmp/data/${name}.txt`;
 
@@ -63,7 +62,7 @@ app.get("/data", async (req, res) => {
     const filePath = `./tmp/data/${n}.txt`;
 
     if (m) {
-      // Read that line from file
+      
       const line = await getLine(filePath, m);
       res.send(line);
     } else {
@@ -76,6 +75,6 @@ app.get("/data", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is up on PORT:${PORT} 🛜`);
+  console.log(`Server is up on PORT:${PORT} !`);
 });
 
