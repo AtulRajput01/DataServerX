@@ -21,7 +21,7 @@ async function getLine(filePath, m) {
   for await (const line of rl) {
     curr++;
     if (curr == m) {
-      return line || "Line 'm' not found ❗❗";
+      return line || "Line 'm' not found ";
     }
   }
 }
@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 app.post("/upload", upload.single("file"), async (req, res) => {
   try {
     if (!req.file) {
-      throw new Error("File not uploaded 🚫");
+      throw new Error("File not uploaded ");
     }
     
     const name = Math.floor(Math.random() * 100) + 1;
@@ -41,9 +41,9 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 
     fs.writeFile(filePath, req.file.buffer.toString(), (err) => {
       if (err) throw err;
-      console.log(`${name} is uploaded successfully 🎉🎉`);
+      console.log(`${name} is uploaded successfully `);
     });
-    res.send(`${name} is uploaded successfully 🎉🎉`);
+    res.send(`${name} is uploaded successfully `);
   } catch (err) {
     console.error(err.message);
     res.status(400).send(err.message);
@@ -56,7 +56,7 @@ app.get("/data", async (req, res) => {
     const m = req.query.m;
 
     if (!n) {
-      throw new Error("File is missing ❌❌");
+      throw new Error("File is missing ");
     }
 
     const filePath = `./tmp/data/${n}.txt`;
@@ -66,7 +66,7 @@ app.get("/data", async (req, res) => {
       const line = await getLine(filePath, m);
       res.send(line);
     } else {
-      throw new Error("Line 'm' is missing ❓❓");
+      throw new Error("Line 'm' is missing ");
     }
   } catch (err) {
     console.error(err.message);
